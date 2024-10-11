@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data</title>
+    <script>
+        // Cek apakah pengguna sudah login
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = "../login/login.html";
+        }
+    </script>
+    
+    <link rel="stylesheet" href="adminstyle.css">
+    <script src="scriptadmin.js"></script>
+    
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Input Data Item</h2>
+        <form id="inputForm" enctype="multipart/form-data">
+            <label for="itemName">Nama Item:</label>
+            <input type="text" id="itemName" name="itemName" required>
+
+            <label for="gambar">Upload Gambar:</label>
+            <input type="file" id="gambar" name="gambar" required>
+
+            <label for="deskripsi">Deskripsi:</label>
+            <input type="text" id="deskripsi" name="deskripsi" required>
+
+            <label for="detail">Detail:</label>
+            <input type="text" id="detail" name="detail" required>
+
+            <label for="harga">Harga:</label>
+            <input type="text" id="harga" name="harga" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
