@@ -7,10 +7,11 @@ async function fetchData() {
     rows.forEach(row => {
         // Gunakan regex untuk memisahkan data CSV dengan lebih baik
         const columns = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g); 
-        
+        const col = row.split(",")   
         if (columns) {
-            const itemName = columns[0].replace(/(^"|"$)/g, ''); // Menghapus tanda kutip jika ada
-            let gambar = columns[1].replace(/(^"|"$)/g, '');
+            const col = row.split(",")
+            const itemName = col[0]; // Menghapus tanda kutip jika ada
+              let gambar = columns[1].replace(/(^"|"$)/g, '');
             const deskripsi = columns[2].replace(/(^"|"$)/g, '');
             const detail = columns[3] ? columns[3].replace(/(^"|"$)/g, '') : ''; // Pastikan kolom ada
             const harga = columns[4].replace(/(^"|"$)/g, '');
