@@ -4,15 +4,17 @@ async function fetchData() {
     const response = await fetch(url);
     const data = await response.text();
     const rows = data.split("\n").slice(1); // Mengabaikan header CSV
+
     console.log(data);
     rows.forEach(row => {
         // Gunakan regex untuk memisahkan data CSV dengan lebih baik, memperhitungkan tanda koma di dalam tanda kutip
         const columns = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g); 
-        const col = row.split(",")
+        const col = row.split(",");
+        const cols = row.split('"');
         const itemName = col[0]; // Menghapus tanda kutip jika ada
         let gambar = columns[1].replace(/(^"|"$)/g, '');
-        const deskripsi = columns[2];
-        const detail = columns[3].replace(/(^"|"$)/g, '');
+        const deskripsi = col[2].replace(/(^"|"$)/g, '');
+        const detail = cols[3]; // Pastikan kolom ada
         const harga = columns[4].replace(/(^"|"$)/g, '');
 
         // Perbaikan URL gambar Google Drive
