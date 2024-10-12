@@ -6,12 +6,12 @@ async function fetchData() {
 
     rows.forEach(row => {
         // Gunakan regex untuk memisahkan data CSV dengan lebih baik
-        const columns = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g); 
-        const col = row.split(",")   
+        const columns = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+        const col = row.split(",")
         if (columns) {
-            const col = row.split(",")
+            const col = row.split(",");
             const itemName = col[0]; // Menghapus tanda kutip jika ada
-              let gambar = columns[1].replace(/(^"|"$)/g, '');
+            let gambar = columns[1].replace(/(^"|"$)/g, '');
             const deskripsi = columns[2].replace(/(^"|"$)/g, '');
             const detail = columns[3] ? columns[3].replace(/(^"|"$)/g, '') : ''; // Pastikan kolom ada
             const harga = columns[4].replace(/(^"|"$)/g, '');
@@ -23,7 +23,7 @@ async function fetchData() {
                     let harga = parent.querySelector('.harga').innerHTML;
                     let judul = parent.querySelector('.card-text').innerHTML;
                     let detailToShow = detail || '<i>tidak ada informasi yang tersedia</i>'; // Gunakan detail yang sudah diproses
-
+                    let details = parent.querySelector('.detail').innerHTML;
                     let tombolModal = document.querySelector('.btnModal');
                     tombolModal.click();
 
@@ -32,9 +32,9 @@ async function fetchData() {
                     image.src = gambar;
                     image.classList.add('w-100');
                     document.querySelector('.modalImage').innerHTML = '';
-                    document.querySelector('.modalImage').appendChild(image); 
-                    document.querySelector('.modalDetail').innerHTML = detailToShow; 
-                    document.querySelector('.modalHarga').innerHTML = harga; 
+                    document.querySelector('.modalImage').appendChild(image);
+                    document.querySelector('.modalDetail').innerHTML = details;
+                    document.querySelector('.modalHarga').innerHTML = harga;
 
                     const nohp = '6281806490304';
                     let pesan = 'https://api.whatsapp.com/send?phone=' + nohp + '&text=Halo Kak, saya ingin membeli produk bernama ' + itemName + ' ' + harga;
