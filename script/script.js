@@ -8,8 +8,8 @@ async function fetchData() {
     rows.forEach(row => {
         // Gunakan regex untuk memisahkan data CSV dengan lebih baik, memperhitungkan tanda koma di dalam tanda kutip
         const columns = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g); 
-        
-        const itemName = columns[0].replace(/(^"|"$)/g, ''); // Menghapus tanda kutip jika ada
+        const col = row.split(",")
+        const itemName = col[0]; // Menghapus tanda kutip jika ada
         let gambar = columns[1].replace(/(^"|"$)/g, '');
         const deskripsi = columns[2];
         const detail = columns[3].replace(/(^"|"$)/g, '');
@@ -52,8 +52,8 @@ async function fetchData() {
                             <div class="modalImage col-md-6 col-12"></div>
                             <div class="col-md-6 col-12">
                                 <div class="modalDetail"></div>
-                                <div class="d-md-flex">
-                                    <br> 
+                                <div class="d-md-flex" style="margin-top:3%"> 
+                                <br>
                                     <a href='' target="blank" class="btn btn-sm btn-warning d-block btnBeli">Beli Produk</a>
                                     <a class="ms-auto text-danger fw-bold d-block text-center text-decoration-none modalHarga"></a>
                                 </div>
