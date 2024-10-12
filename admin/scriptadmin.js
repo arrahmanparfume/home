@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxG-dUEAbgUCWdV_zm-1YSeUHriisq7W7eMnyG_ii7gOMBHOv44xRbpHCQyQ3WXrP5VaQ/exec'; // Masukkan Google Apps Script URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzG_GhzpOIh_7S6wzrfA96FOp1VB_r0GcbhNp-elV8-WY9SSmecU_iLRqqsdCj_BfAmkw/exec'; // Masukkan Google Apps Script URL
 const form = document.getElementById('inputForm');
 
 form.addEventListener('submit', e => {
