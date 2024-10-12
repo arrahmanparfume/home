@@ -31,7 +31,7 @@ async function fetchData() {
                         <div class="d-none detail">${detail}</div>
                     </div>
                     <div class="card-footer d-md-flex"> 
-                        <button class="btn btn-sm btn-primary d-block btnDetail">Detail</button>
+                        <button class="btn btn-sm btn-primary d-block btnDetail">Beli Produk</button>
                         <a class="ms-auto text-danger fw-bold d-block text-center text-decoration-none harga">RP. ${harga}</a>
                     </div>
                 </div>
@@ -52,7 +52,8 @@ async function fetchData() {
                             <div class="modalImage col-md-6 col-12"></div>
                             <div class="col-md-6 col-12">
                                 <div class="modalDetail"></div>
-                                <div class="d-md-flex"> 
+                                <div class="d-md-flex">
+                                    <br> 
                                     <a href='' target="blank" class="btn btn-sm btn-warning d-block btnBeli">Beli Produk</a>
                                     <a class="ms-auto text-danger fw-bold d-block text-center text-decoration-none modalHarga"></a>
                                 </div>
