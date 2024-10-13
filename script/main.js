@@ -36,7 +36,7 @@ async function fetchData() {
                     document.querySelector('.modalDetail').innerHTML = details;
                     document.querySelector('.modalHarga').innerHTML = harga;
 
-                    const nohp = '6281806490304';
+                    const nohp = '6288223886502';
                     let pesan = 'https://api.whatsapp.com/send?phone=' + nohp + '&text=Halo Kak, saya ingin membeli produk bernama ' + itemName + ' ' + harga;
                     document.querySelector('.btnBeli').href = pesan;
                 });
