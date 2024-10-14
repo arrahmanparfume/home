@@ -27,14 +27,14 @@ async function fetchData() {
                     <img src="${gambar}" class="card-img-top" alt="${itemName}" style="margin:5%; width:auto">
                     <div class="card-body">
                         <h5 class="card-title">${itemName}</h5>
-                        <p class="card-text" style="height:5rem">${deskripsi}</p>
+                        <p class="card-text deskripsi" style="height:5rem">${deskripsi}</p>
                     </div>
                     <div>
                         <div class="d-none detail">${detail}</div>
                     </div>
                     <div class="card-footer d-md-flex"> 
                         <button class="btn btn-sm btn-primary d-block btnDetail">Beli Produk</button>
-                        <a class="ms-auto text-danger fw-bold d-block text-center text-decoration-none harga">RP. ${harga}</a>
+                        <a class="ms-auto text-danger fw-bold d-block text-center text-decoration-none harga">Rp. ${harga}</a>
                     </div>
                 </div>
             </div>
@@ -54,9 +54,26 @@ async function fetchData() {
                             <div class="modalImage col-md-6 col-12"></div>
                             <div class="col-md-6 col-12">
                                 <div class="modalDetail"></div>
+                                 <div class="form">
+                                    <form id="orderForm" class="mt-3">
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">Nama</label>
+                                        <input type="text" class="form-control" id="nama" placeholder="Pelanggan" required >
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="alamat" class="form-label">Alamat</label>
+                                        <input type="text" class="form-control" id="alamat" placeholder="Jl. Abc" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nohp" class="form-label">No HP</label>
+                                        <input type="tel" class="form-control" id="nohp" placeholder="08123456789" required>
+                                    </div>
+                                    </form>
+                                </div>
                                 <div class="d-md-flex" style="margin-top:3%"> 
                                 <br>
-                                    <a href='' target="blank" class="btn btn-sm btn-warning d-block btnBeli">Beli Produk</a>
+                                
+                                    <a target='blank' class="btn btn-sm btn-warning d-block btnBeli">Beli Produk</a>
                                     <a class="ms-auto text-danger fw-bold d-block text-center text-decoration-none modalHarga"></a>
                                 </div>
                             </div>
