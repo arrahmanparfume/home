@@ -60,7 +60,7 @@ async function fetchData() {
             const image = document.createElement('img');
             image.src = gambar;
             image.classList.add('w-100');
-            document.querySelector('.modalImage').innerHTML = '';
+            document.querySelector('.modalImage').innerHTML = deskripsi;
             document.querySelector('.modalImage').appendChild(image);
             document.querySelector('.modalDetail').innerHTML = details;
             document.querySelector('.modalHarga').innerHTML = harga;
