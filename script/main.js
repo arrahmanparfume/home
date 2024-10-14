@@ -21,7 +21,8 @@ async function fetchData() {
                     let parent = e.target.parentNode.parentNode;
                     let gambar = parent.querySelector('.card-img-top').src;
                     let harga = parent.querySelector('.harga').innerHTML;
-                    let judul = parent.querySelector('.card-text').innerHTML;
+                    let judul = parent.querySelector('.card-title').innerHTML;
+                    let deskripsi = parent.querySelector('.card-text').innerHTML;
                     let detailToShow = detail || '<i>tidak ada informasi yang tersedia</i>'; // Gunakan detail yang sudah diproses
                     let details = parent.querySelector('.detail').innerHTML;
                     let tombolModal = document.querySelector('.btnModal');
@@ -37,7 +38,7 @@ async function fetchData() {
                     document.querySelector('.modalHarga').innerHTML = harga;
 
                     const nohp = '6288223886502';
-                    let pesan = 'https://api.whatsapp.com/send?phone=' + nohp + '&text=Halo Kak, saya ingin membeli produk bernama ' + itemName + ', ' +deskripsi+' '+ harga;
+                    let pesan = 'https://api.whatsapp.com/send?phone=' + nohp + '&text=Halo Kak, saya ingin membeli produk bernama ' + judul + ', ' +deskripsi+' '+ harga;
                     document.querySelector('.btnBeli').href = pesan;
                 });
             });
