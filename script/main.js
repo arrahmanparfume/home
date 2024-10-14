@@ -37,7 +37,7 @@ async function fetchData() {
                     document.querySelector('.modalHarga').innerHTML = harga;
 
                     const nohp = '6288223886502';
-                    let pesan = 'https://api.whatsapp.com/send?phone=' + nohp + '&text=Halo Kak, saya ingin membeli produk bernama ' + itemName + ' ' + harga;
+                    let pesan = 'https://api.whatsapp.com/send?phone=' + nohp + '&text=Halo Kak, saya ingin membeli produk bernama ' + itemName + ', ' +deskripsi+' '+ harga;
                     document.querySelector('.btnBeli').href = pesan;
                 });
             });
