@@ -73,7 +73,7 @@ async function fetchData() {
                 const alamat = document.getElementById('alamat').value;
                 const hp = document.getElementById('nohp').value;
 
-                const nohp = '6281806490304';
+                const nohp = '6288223886502';
                 const pesan = `Halo Kak, saya ingin membeli produk bernama ${judul}, ${deskripsi} Seharga ${harga} \nBerikut data saya : \n - Nama : ${nama}\n - Alamat : ${alamat}\n - No HP : ${hp}`;
                 document.querySelector('.btnBeli').href = `https://api.whatsapp.com/send?phone=${nohp}&text=${encodeURIComponent(pesan)}`;
             });
