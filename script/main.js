@@ -16,29 +16,6 @@ async function fetchData() {
             const deskripsi = columns[2].replace(/(^"|"$)/g, '');
             const detail = columns[3] ? columns[3].replace(/(^"|"$)/g, '') : ''; // Pastikan kolom ada
             const harga = columns[4].replace(/(^"|"$)/g, '');
-
-            // Buat elemen HTML
-            const cardHTML = `
-                <div class="col mb-5">
-                    <div class="card shadow card">
-                        <img src="${gambar}" class="card-img-top" alt="${itemName}" style="margin:5%; width:auto">
-                        <div class="card-body">
-                            <h5 class="card-title">${itemName}</h5>
-                            <p class="card-text deskripsi" style="height:5rem">${deskripsi}</p>
-                        </div>
-                        <div>
-                            <div class="d-none detail">${detail}</div>
-                        </div>
-                        <div class="card-footer d-md-flex"> 
-                            <button class="btn btn-sm btn-primary d-block btnDetail">Beli Produk</button>
-                            <a class="ms-auto text-danger fw-bold d-block text-center text-decoration-none harga">RP. ${harga}</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            // Tambahkan HTML ke container
-            document.getElementById('produk-container').insertAdjacentHTML('beforeend', cardHTML);
         }
     });
 
