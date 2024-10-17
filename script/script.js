@@ -5,7 +5,6 @@ async function fetchData() {
     const data = await response.text();
     const rows = data.split("\n").slice(1); // Mengabaikan header CSV
 
-    console.log(data);
     rows.forEach(row => {
         // Gunakan regex untuk memisahkan data CSV dengan lebih baik, memperhitungkan tanda koma di dalam tanda kutip
         const columns = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g); 
@@ -23,7 +22,7 @@ async function fetchData() {
         // Buat elemen HTML
         const cardHTML = `
             <div class="col mb-5">
-                <div class="card shadow card">
+                <div class="card card kartu">
                     <img src="${gambar}" class="card-img-top" alt="${itemName}" style="margin:5%; width:auto">
                     <div class="card-body">
                         <h5 class="card-title">${itemName}</h5>
