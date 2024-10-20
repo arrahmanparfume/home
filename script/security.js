@@ -9,13 +9,19 @@ document.addEventListener('keydown', function (e) {
         e.preventDefault();
     }
 });
+
 var devtools = /./;
 // Deteksi developer tools
 window.addEventListener('blur', function () {
     setTimeout(function () {
         if (!devtools.hidden) {
-            alert('Developer tools terdeteksi terbuka!');
+            alert('Developer tools telah terdeteksi! Keamanan aktif');
             window.location.href = "about:blank";
         }
-    }, 1000);
+    }, 500); // Mengurangi waktu untuk mendeteksi
+});
+
+// Deteksi fokus
+window.addEventListener('focus', function () {
+    // Reset atau logika lain saat fokus
 });
