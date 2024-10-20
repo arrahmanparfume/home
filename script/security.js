@@ -10,18 +10,21 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-var devtools = /./;
 // Deteksi developer tools
-window.addEventListener('blur', function () {
-    setTimeout(function () {
-        if (!devtools.hidden) {
-            alert('Developer tools telah terdeteksi! Keamanan aktif');
-            window.location.href = "about:blank";
-        }
-    }, 500); // Mengurangi waktu untuk mendeteksi
-});
+var devtools = /./;
+var devtoolsOpen = false;
 
-// Deteksi fokus
-window.addEventListener('focus', function () {
-    // Reset atau logika lain saat fokus
-});
+function detectDevTools() {
+    if (!devtools.hidden) {
+        if (!devtoolsOpen) {
+            devtoolsOpen = true;
+            console.warn('Developer tools terdeteksi terbuka!');
+            // Anda bisa mengarahkan pengguna atau menampilkan pesan di sini
+            window.location.href = "about:blank"; // Atau ganti dengan logika lain yang diinginkan
+        }
+    } else {
+        devtoolsOpen = false; // Reset jika Developer Tools ditutup
+    }
+}
+
+setInterval(detectDevTools, 2000); // Cek setiap 2 detik
