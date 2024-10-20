@@ -23,10 +23,10 @@ async function fetchData() {
         const cardHTML = `
             <div class="col mb-5">
                 <div class="card card kartu">
-                    <img src="${gambar}" class="card-img-top" alt="${itemName}" style="margin:5%; width:auto">
+                    <img src="${gambar}" class="card-img-top rounded-5" alt="${itemName}" style="margin:5%; width:auto">
                     <div class="card-body">
-                        <h5 class="card-title">${itemName}</h5>
-                        <p class="card-text deskripsi" style="height:5rem">${deskripsi}</p>
+                        <h5 class="card-title text-capitalize text-uppercased fs-6" style="text-shadow:0px 0px 10px greenyellow">${itemName}</h5>
+                        <p class="card-text deskripsi text-uppercase fs-5" style="height:5rem">${deskripsi}</p>
                     </div>
                     <div>
                         <div class="d-none detail">${detail}</div>
