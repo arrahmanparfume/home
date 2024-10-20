@@ -29,20 +29,28 @@ nav ul li a{
     animation: kebawah 2s 1 ;
 }
 .DKatalog{
-    animation: rotateBox 3s  1  ;
+    animation: kebawah 3s 1 ;
 }
 .kartu{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.441);
+    animation: rotateBox 2s 1;
 }
-.kartu:hover{
-    animation: glow 3s infinite;
-}
+.kartu:hover{box-shadow: 0 0 20px red;}
+.kartu:active{box-shadow: 0 0 30px red;}
 
 #nohp:focus, #alamat:focus, #nama:focus{
     animation: input 3s infinite;
 }
 .prd:hover, .tk:hover, .co:hover, .log:hover{
     background-color: gainsboro;
+}
+
+.liWa, .liIg{
+    visibility: hidden;
+}
+
+.banner{
+    animation: membesar 3s 1;
 }
 
 @keyframes kekiri{
@@ -60,8 +68,8 @@ nav ul li a{
 }
 
 @keyframes rotateBox {
-    from {transform: rotate(0deg);}
-    to{transform: rotate(360deg);}
+    from {transform: rotateY(0deg);}
+    to{transform: rotateY(360deg);}
 }
 
 @keyframes glow {
@@ -79,4 +87,9 @@ nav ul li a{
 @keyframes input{
     from{box-shadow: 0 0 10px greenyellow;}
     to{box-shadow: 0 0 20px greenyellow;}
+}
+
+@keyframes membesar{
+    from{transform: scale(0.1);}
+    to{transform: scale(1);}
 }
