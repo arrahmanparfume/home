@@ -5,26 +5,33 @@ document.addEventListener('contextmenu', function (e) {
 
 // Mencegah shortcut keyboard
 document.addEventListener('keydown', function (e) {
-    if (e.key === "F12" || (e.ctrlKey && (e.key === "u" || e.key === "U"))) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I") || (e.ctrlKey && (e.key === "u" || e.key === "U"))) {
         e.preventDefault();
     }
 });
 
 // Deteksi developer tools
-var devtools = /./;
 var devtoolsOpen = false;
+var threshold = 160; // Set threshold untuk perbedaan ukuran
 
 function detectDevTools() {
-    if (!devtools.hidden) {
+    const widthDifference = window.outerWidth - window.innerWidth > threshold;
+
+    if (widthDifference) {
+        // Jika Developer Tools terbuka
         if (!devtoolsOpen) {
             devtoolsOpen = true;
-            console.warn('Developer tools terdeteksi terbuka!');
-            // Anda bisa mengarahkan pengguna atau menampilkan pesan di sini
-            window.location.href = "about:blank"; // Atau ganti dengan logika lain yang diinginkan
+            alert('Developer tools terdeteksi terbuka!');
+            // Alihkan ke about:blank setelah memberi peringatan
+            setTimeout(function() {
+                window.location.href = "about:blank"; 
+            }, 100); // Menunggu sebentar sebelum alih ke about:blank
         }
     } else {
-        devtoolsOpen = false; // Reset jika Developer Tools ditutup
+        // Reset status jika Developer Tools ditutup
+        devtoolsOpen = false; 
     }
 }
 
-setInterval(detectDevTools, 2000); // Cek setiap 2 detik
+// Cek status Developer Tools secara berkala
+setInterval(detectDevTools, 1000); // Cek setiap detik
